@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Daniela Zermeño — Portafolio de Proyectos</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,500&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F6F4EE;
+    --paper-deep:#EFECE3;
+    --ink:#1B1B18;
+    --ink-muted:#6A695F;
+    --navy:#1E3A5F;
+    --navy-deep:#122840;
+    --hairline:#D9D5C7;
+    --gold:#93732C;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'Inter', sans-serif;
+    font-size:16px;
+    line-height:1.55;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--navy);}
+  .wrap{max-width:880px;margin:0 auto;padding:0 32px;}
+
+  /* ---------- Header ---------- */
+  header.hero{
+    padding:88px 0 56px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .eyebrow{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--navy);
+    margin:0 0 18px;
+  }
+  h1{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:clamp(40px, 6vw, 60px);
+    line-height:1.02;
+    margin:0 0 6px;
+    letter-spacing:-0.01em;
+  }
+  .role-line{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-weight:400;
+    font-size:20px;
+    color:var(--ink-muted);
+    margin:0 0 28px;
+  }
+  .thesis{
+    max-width:640px;
+    font-size:17px;
+    color:var(--ink);
+    margin:0 0 30px;
+  }
+  .contact-row{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px 18px;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12.5px;
+    color:var(--ink-muted);
+  }
+  .contact-row a{color:var(--ink-muted); text-decoration:none; border-bottom:1px solid var(--hairline);}
+  .contact-row a:hover{color:var(--navy); border-bottom-color:var(--navy);}
+  .contact-row a.cv-download{
+    color:var(--paper);
+    background:var(--navy);
+    border:none;
+    padding:5px 14px;
+    border-radius:2px;
+    font-weight:500;
+  }
+  .contact-row a.cv-download:hover{background:var(--navy-deep);}
+
+  /* ---------- Impact strip ---------- */
+  section.impact{
+    padding:44px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .impact-grid{
+    display:grid;
+    grid-template-columns:repeat(4, 1fr);
+    gap:28px;
+  }
+  .impact-item .num{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:34px;
+    color:var(--navy);
+    line-height:1;
+    margin-bottom:8px;
+  }
+  .impact-item .label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-muted);
+    letter-spacing:0.02em;
+  }
+
+  /* ---------- Cómo trabajo ---------- */
+  section.principles{
+    padding:48px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  .principles h2{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:15px;
+    text-transform:uppercase;
+    letter-spacing:0.08em;
+    color:var(--navy);
+    margin:0 0 26px;
+  }
+  .principles-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:28px 40px;
+  }
+  .principle .p-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--ink-muted);
+    text-transform:uppercase;
+    letter-spacing:0.05em;
+    margin-bottom:8px;
+  }
+  .principle p{
+    margin:0;
+    font-size:15.5px;
+    color:var(--ink);
+  }
+
+  /* ---------- Case studies ---------- */
+  section.cases{padding:16px 0 40px;}
+  .case{
+    border-bottom:1px solid var(--hairline);
+    padding:44px 0;
+    display:grid;
+    grid-template-columns:200px 1fr;
+    gap:32px;
+  }
+  .case:last-child{border-bottom:none;}
+  .case-meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11.5px;
+    color:var(--ink-muted);
+    letter-spacing:0.03em;
+  }
+  .case-meta .tag{
+    display:inline-block;
+    color:var(--navy);
+    text-transform:uppercase;
+    margin-bottom:10px;
+  }
+  .case-meta .stack{
+    margin-top:14px;
+    color:var(--ink-muted);
+    line-height:1.7;
+  }
+  .case h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    font-size:24px;
+    margin:0 0 12px;
+    line-height:1.15;
+  }
+  .case p{
+    margin:0 0 12px;
+    font-size:15.5px;
+    color:var(--ink);
+  }
+  .case p.context{color:var(--ink-muted);}
+  .case .impact-callout{
+    margin-top:16px;
+    padding:14px 18px;
+    background:var(--paper-deep);
+    border-left:2px solid var(--gold);
+    font-size:14.5px;
+  }
+  .case .impact-callout strong{color:var(--navy-deep);}
+
+  /* ---------- Footer ---------- */
+  footer{
+    padding:52px 0 80px;
+    text-align:center;
+  }
+  footer .close-line{
+    font-family:'Fraunces', serif;
+    font-style:italic;
+    font-size:18px;
+    color:var(--ink-muted);
+    margin-bottom:18px;
+  }
+  footer .contact-row{justify-content:center;}
+
+  @media (max-width:720px){
+    .impact-grid{grid-template-columns:repeat(2, 1fr);}
+    .case{grid-template-columns:1fr; gap:12px;}
+  }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Portafolio de proyectos</p>
+    <h1>Daniela Zermeño</h1>
+    <p class="role-line">Operations &amp; Product Lead — datos, procesos y automatización</p>
+    <p class="thesis">Ocho proyectos que resumen una misma forma de trabajar: encontrar un proceso sin dueño, sin datos o sin estructura, y dejarlo ordenado, medible y fácil de escalar — con o sin ayuda de un equipo de tecnología.</p>
+    <div class="contact-row">
+      <span>Ciudad de México, México</span>
+      <a href="mailto:jdzd.39@gmail.com">jdzd.39@gmail.com</a>
+      <a href="tel:+525624440634">+52 56 2444 0634</a>
+      <a href="https://www.linkedin.com/in/daniela-zermeno/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="Daniela_Zermeno_CV.pdf" download class="cv-download">Descargar CV (PDF)</a>
+    </div>
+  </div>
+</header>
+
+<section class="impact">
+  <div class="wrap">
+    <div class="impact-grid">
+      <div class="impact-item">
+        <div class="num">33h → 6min</div>
+        <div class="label">Tiempo diario de tracking logístico</div>
+      </div>
+      <div class="impact-item">
+        <div class="num">1,000/mes</div>
+        <div class="label">Solicitudes centralizadas en una sola app</div>
+      </div>
+      <div class="impact-item">
+        <div class="num">100,000</div>
+        <div class="label">Propiedades gestionadas a nivel nacional</div>
+      </div>
+      <div class="impact-item">
+        <div class="num">8</div>
+        <div class="label">Sistemas y procesos diseñados desde cero</div>
+      </div>
+    </div>
+</section>
+
+<section class="principles">
+  <div class="wrap">
+    <h2>Cómo trabajo</h2>
+    <div class="principles-grid">
+      <div class="principle">
+        <div class="p-label">Primero el proceso real</div>
+        <p>Antes de proponer una herramienta, me siento con el equipo a ver cómo se trabaja de verdad — no cómo dice el manual que se trabaja.</p>
+      </div>
+      <div class="principle">
+        <div class="p-label">Datos, no percepciones</div>
+        <p>Si algo no se puede medir, lo primero que hago es encontrar la forma de medirlo. Las decisiones se sostienen con datos, no con opiniones.</p>
+      </div>
+      <div class="principle">
+        <div class="p-label">Construyo para que funcione sin mí</div>
+        <p>Documentación clara y herramientas simples, pensadas para que cualquier persona del equipo pueda tomar la operación.</p>
+      </div>
+      <div class="principle">
+        <div class="p-label">Me adapto yo, no el equipo</div>
+        <p>La resistencia al cambio se resuelve comunicando claro y construyendo confianza — no imponiendo un proceso nuevo desde arriba.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="cases">
+  <div class="wrap">
+
+    <!-- 1 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="tag">Producto interno</span><br>
+        Cashea · 2026
+        <div class="stack">Next.js · TypeScript<br>Supabase (PostgreSQL)<br>Vercel · GitHub</div>
+      </div>
+      <div>
+        <h3>App de migración de modelo y gobernanza del proceso</h3>
+        <p class="context">El cambio de aliados del modelo Base al modelo Express (lending) se gestionaba de forma manual y fragmentada en Slack, entre tres equipos, sin trazabilidad ni métricas de calidad.</p>
+        <p>Construí una herramienta propia para reemplazar ese proceso: un tablero con las 7 etapas del flujo, control de qué puede ver y hacer cada equipo, carga masiva de solicitudes sin duplicados, y un módulo para registrar errores después de resolver cada caso. Cuando mi manager me encargó el ownership completo de esta operación, además definí cómo debía gobernarse — quién decide qué y cuándo se escala un caso — y dejé documentado todo el proceso de transición para que cualquier persona pudiera tomarlo.</p>
+        <p>Ese trabajo no se quedó en la herramienta: analicé meses de solicitudes e incidencias para entender de dónde venían realmente los problemas, y con esos patrones construimos un playbook con reglas claras de trabajo — qué se corrige de inmediato y qué se escala — validado directamente con el equipo de Finanzas.</p>
+        <div class="impact-callout">Reemplazó un proceso 100% manual por una herramienta propia con dashboard de <strong>11 métricas</strong>, gobernanza formal entre 3 áreas y, por primera vez, una tasa de error del proceso medible.</div>
+      </div>
+    </div>
+
+    <!-- 2 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="tag">Datos &amp; analítica</span><br>
+        Cashea · 2026
+        <div class="stack">HubSpot Report Builder<br>Sales Hub Pro · Ops Hub<br>Google Sheets</div>
+      </div>
+      <div>
+        <h3>Dashboards de performance del pipeline de onboarding</h3>
+        <p class="context">El equipo no tenía visibilidad estructurada de tiempos por etapa ni desempeño individual, y enfrentaba una percepción incorrecta de su trabajo por parte de otras áreas.</p>
+        <p>Construí desde cero dos tableros con más de 15 reportes: cruzando la información de tickets y empresas, calculando cuánto tiempo tomaba cada etapa y cada responsable dentro de ella, y armando vistas de uso diario para el equipo. Presenté los hallazgos directamente a mi manager y al equipo de Onboarding.</p>
+        <div class="impact-callout">Evidenció que la etapa gestionada por mi equipo (Envío de Kit) tenía un tiempo mediano de <strong>1.2 días</strong>, frente a <strong>6.8 días</strong> de una etapa externa — corrigiendo con datos la percepción del desempeño del equipo.</div>
+      </div>
+    </div>
+
+    <!-- 3 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="tag">Arquitectura de procesos</span><br>
+        Cashea · 2026 — en construcción
+        <div class="stack">PostgreSQL · JumCloud SSO<br>Builder no-code interno<br>Google Sheets / Apps Script</div>
+      </div>
+      <div>
+        <h3>Sistema centralizado de solicitudes postventa</h3>
+        <p class="context">Catorce tipos de solicitud postventa (cambios de razón social, banco, adendas, offboarding) se gestionaban por 14 flujos de Slack paralelos, sin control de conflictos ni trazabilidad ante Legal y Finanzas.</p>
+        <p>Revisé y puse en orden el estado real de los 14 flujos, comparé cuatro herramientas distintas considerando costo y dependencia de otros equipos, y diseñé la lógica que resuelve el problema de fondo: un sistema que bloquea automáticamente una solicitud si ya hay otra en curso sobre el mismo aliado. Todo quedó documentado en una especificación lista para construirse.</p>
+        <div class="impact-callout">Un diseño que resuelve el problema raíz — solicitudes simultáneas en conflicto — para un volumen de hasta <strong>1,800 solicitudes/mes</strong>.</div>
+      </div>
+    </div>
+
+    <!-- 4 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="tag">Diseño de procesos</span><br>
+        Cashea · 2026
+        <div class="stack">Notion · Slack<br>Google Sheets</div>
+      </div>
+      <div>
+        <h3>Proceso de cambios de razón social — modelo Lending</h3>
+        <p class="context">No existía un proceso documentado para cuando un aliado del modelo Lending necesitaba cambiar su razón social; los casos se mezclaban con otros flujos y los errores en este modelo son irreversibles.</p>
+        <p>Reuní a Legal, Finanzas, Data, Activaciones, Gestión Bancaria y el equipo comercial para mapear y oficializar el proceso juntos. Diseñé una guía de decisión según el tipo de caso, puntos de control para evitar errores entre pasos, y una revisión semanal con Finanzas antes de aplicar cualquier cambio — todo documentado como manual operativo en Notion.</p>
+        <div class="impact-callout">El equipo pasó de no tener un proceso a contar con uno <strong>validado por seis áreas</strong>, con control de calidad previo a cada ejecución.</div>
+      </div>
+    </div>
+
+    <!-- 5 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="tag">Gobernanza</span><br>
+        Cashea · 2026
+        <div class="stack">Retool · Jira<br>Notion · Slack Workflows</div>
+      </div>
+      <div>
+        <h3>Gobernanza de accesos a la herramienta maestra de aliados</h3>
+        <p class="context">El acceso a ABM-Aliados (la herramienta que gestiona la información maestra de comercios) requería dos capas independientes de permiso, sin ningún proceso formal para solicitarlas.</p>
+        <p>Escribí un manual en Notion con el proceso completo en dos pasos, armé un flujo en Slack que centraliza y valida las solicitudes antes de escalarlas a Producto, y encontré un detalle que nadie había documentado — un tipo de permiso adicional que generaba tickets incompletos una y otra vez.</p>
+        <div class="impact-callout">Un proceso antes disperso entre tres equipos, ahora documentado y listo para escalar de cara al crecimiento proyectado a <strong>30 analistas</strong>.</div>
+      </div>
+    </div>
+
+    <!-- 6 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="tag">Automatización</span><br>
+        Cashea · 2026
+        <div class="stack">Python 3 · REST API<br>Ingeniería inversa de APIs<br>HubSpot CRM</div>
+      </div>
+      <div>
+        <h3>Automatización del tracking logístico de envíos</h3>
+        <p class="context">El seguimiento manual de ~500 envíos diarios de kits de bienvenida tomaba cerca de 4 minutos por guía — más de 33 horas de trabajo humano al día, sin trazabilidad de fechas.</p>
+        <p>Construí un pequeño programa que revisa el estado de cada guía directamente en el sistema de la paquetería y genera un archivo listo para cargar en HubSpot, con manejo de errores para que nunca se perdiera información en el camino.</p>
+        <div class="impact-callout">Redujo el proceso de <strong>~33 horas a ~6 minutos diarios</strong>, validado sobre 708 registros reales con 0 errores en producción.</div>
+      </div>
+    </div>
+
+    <!-- 7 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="tag">Gestión de proveedores</span><br>
+        Cashea · 2026
+        <div class="stack">HubSpot · Google Sheets<br>Análisis costo-beneficio</div>
+      </div>
+      <div>
+        <h3>Evaluación y migración de proveedor de mensajería</h3>
+        <p class="context">El proveedor de mensajería vigente presentaba fricciones de tiempos de respuesta, visibilidad de devoluciones y costo para el envío de welcome kits en Venezuela.</p>
+        <p>Diseñé una prueba piloto de ~150 kits al mes en tres ciudades, con criterios claros para decidir si migrábamos o no, un análisis de costos por volumen, y ajusté el proceso diario para trabajar con dos proveedores al mismo tiempo sin que se confundieran los envíos.</p>
+        <div class="impact-callout">Proyectó una reducción de <strong>47% en el costo por envío</strong> a escala nacional en caso de migración total.</div>
+      </div>
+    </div>
+
+    <!-- 8 -->
+    <div class="case">
+      <div class="case-meta">
+        <span class="tag">Herramienta ligera</span><br>
+        Cashea · 2026
+        <div class="stack">HTML · CSS · JavaScript<br>JsBarcode (CDN)</div>
+      </div>
+      <div>
+        <h3>Generador de etiquetas de envío para welcome kits</h3>
+        <p class="context">El flujo de identificación de cajas ensambladas por un proveedor externo dependía de guías de activación que ya no se generaban, dejando los kits sin forma de rastrearlos.</p>
+        <p>Construí una herramienta sencilla donde el operador pega los datos desde Excel y automáticamente se generan las hojas de etiquetas listas para imprimir, con código de barras, colores distintos según el tipo de línea, y sin repetir por error el mismo ID dos veces.</p>
+        <div class="impact-callout">Pasó de una etiqueta por hoja a <strong>12 por hoja</strong>, estandarizando la información que recibe el courier y reduciendo errores de identificación.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="close-line">Gracias por leer hasta aquí.</p>
+    <div class="contact-row">
+      <a href="mailto:jdzd.39@gmail.com">jdzd.39@gmail.com</a>
+      <a href="tel:+525624440634">+52 56 2444 0634</a>
+      <a href="https://www.linkedin.com/in/daniela-zermeno/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
